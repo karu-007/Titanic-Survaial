@@ -253,8 +253,7 @@ st.markdown("<br>", unsafe_allow_html=True)
 left, right = st.columns([1.2, 1])
 
 with left:
-    st.markdown('<div class="card">', unsafe_allow_html=True)
-    st.markdown('<div class="section-title">Prediction Summary</div>', unsafe_allow_html=True)
+    st.markdown("### Prediction Summary")
 
     if prediction is None:
         st.warning("Model file not found. Train and save your CatBoost model first.")
@@ -286,12 +285,10 @@ with left:
             for reason in reasons[:4]:
                 st.write(f"- {reason.capitalize()}.")
 
-    st.markdown('</div>', unsafe_allow_html=True)
 
 with right:
-    st.markdown('<div class="card">', unsafe_allow_html=True)
-    st.markdown('<div class="section-title">Survival Percentage</div>', unsafe_allow_html=True)
-
+    st.markdown("### Survival Percentage")
+    
     if prediction is None:
         st.info("The pie chart will appear after the model is loaded and a prediction is generated.")
     else:
